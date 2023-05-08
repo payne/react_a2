@@ -9,6 +9,22 @@ import { HomePage } from './components/HomePage';
 function App() {
   return (
     <>
+    <div>
+      <ul>
+        <li><Link to="/profile">Profile</Link></li>
+        <li><Link to="/feed">Feed</Link></li>
+      </ul>
+    </div>
+    <div>
+      <Routes>
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/feed" element={<FeedPage />} />
+        <Route path="/" element={<HomePage />} />
+      </Routes>
+    </div>
+    <div>
+      <Outlet />
+    </div>
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -24,20 +40,6 @@ function App() {
           Learn React
         </a>
       </header>
-    </div>
-    <ul>
-      <li><Link to="/profile">Profile</Link></li>
-      <li><Link to="/feed">Feed</Link></li>
-    </ul>
-    <div>
-      <Routes>
-        <Route path="/profile" element={<ProfilePage />} />
-        <Route path="/feed" element={<FeedPage />} />
-        <Route path="/" element={<HomePage />} />
-      </Routes>
-    </div>
-    <div>
-      <Outlet />
     </div>
     </>
   );
